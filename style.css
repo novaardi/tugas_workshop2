@@ -1,0 +1,157 @@
+/* Universal Selector */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Root for CSS Variables */
+:root {
+  --primary-color: #04034b;
+  --secondary-color: #6e62f0;
+  --light-color: #f9f9f9;
+  --text-color: #333;
+}
+
+/* Body Styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--light-color);
+  padding: 0;
+  margin: 0;
+}
+
+/* Header Section */
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+header .menu {
+  list-style: none;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+header .menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+header .menu li a:hover {
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+}
+
+/* Section Styles */
+.section {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+/* Galeri List */
+.gallery-container {
+  display: flex; /* Menggunakan Flexbox untuk tata letak yang fleksibel */
+  flex-wrap: wrap; /* Memungkinkan item untuk pindah ke baris berikutnya jika tidak muat */
+  gap: 20px; /* Jarak antara setiap item galeri */
+  justify-content: center; /* Pusatkan item galeri secara horizontal */
+  padding: 0 10px; /* Sedikit padding di sisi container jika layar sangat kecil */
+}
+
+.gallery-item {
+  border: 1px solid #ddd; /* Border tipis untuk setiap item */
+  padding: 15px; /* Padding di dalam setiap item */
+  text-align: center;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sedikit bayangan untuk efek kedalaman */
+  /* Menentukan lebar setiap item agar ada beberapa kolom */
+  flex-basis: 300px; /* Ukuran dasar untuk item, bisa diatur sesuai keinginan */
+  flex-grow: 1; /* Memungkinkan item tumbuh mengisi ruang yang tersedia */
+  max-width: 100%; /* Pastikan tidak melebihi lebar induknya */
+}
+
+.gallery-item img {
+  max-width: 100%; /* PENTING: Gambar tidak akan pernah lebih besar dari lebar wadahnya */
+  height: auto; /* PENTING: Tinggi akan menyesuaikan secara otomatis untuk menjaga rasio aspek */
+  display: block; /* Menghilangkan ruang kosong di bawah gambar */
+  margin: 0 auto 10px auto; /* Pusatkan gambar horizontal dan berikan jarak di bawah */
+  border-radius: 5px; /* Sedikit lengkungan pada gambar */
+  object-fit: cover; /* Cara gambar mengisi ruang. 'cover' akan memotong jika rasio aspek tidak cocok, tapi mengisi penuh. */
+  /* Jika Anda ingin seluruh gambar terlihat tanpa dipotong, gunakan 'contain'. */
+  /* object-fit: contain; */
+  width: 100%; /* Pastikan gambar mengisi lebar item galeri */
+  height: 200px; /* Beri tinggi tetap agar semua gambar memiliki tinggi yang seragam */
+  /* Jika Anda tidak ingin tinggi seragam, hapus height: 200px dan biarkan height: auto; */
+}
+
+.gallery-item p {
+  font-size: 1em;
+  color: var(--text-color);
+  margin-top: 10px; /* Jarak antara gambar dan teks */
+  font-weight: bold; /* Teks judul gambar jadi lebih tebal */
+}
+
+/* Media Query untuk layar yang lebih kecil */
+@media (max-width: 768px) .gallery-container {
+  flex-direction: column; /* Ubah tata letak menjadi satu kolom pada layar kecil */
+  align-items: center; /* Pusatkan item jika hanya satu kolom */
+}
+
+.gallery-item {
+  flex-basis: auto; /* Reset flex-basis */
+  width: 90%; /* Ambil sebagian besar lebar pada layar kecil */
+  margin-bottom: 20px; /* Tambahkan margin bawah untuk setiap item */
+}
+
+/* Form Styles */
+form label {
+  display: block;
+  margin-top: 10px;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 5px;
+}
+
+form button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Footer Section */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: white;
+}
